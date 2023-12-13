@@ -159,3 +159,42 @@ alter table HECHO_PRESTAMO
       references DIM_CLIENTE (ID_CLIENTE)
       on delete restrict on update restrict;
 
+----------------------------------------------------------------------------
+INSERCIONES
+----------------------------------------------------------------------------
+/*DIM_AUTOR*/
+INSERT INTO DIM_AUTOR (NOMBRE_AUTOR) VALUES 
+('Gabriel García Márquez'),
+('J.K. Rowling'),
+('Isabel Allende');
+
+/*DIM_CLIENTE*/
+INSERT INTO DIM_CLIENTE (NOMBRE_CLIENTE, DIRECCCION_CLIENTE, NUMERO_TELEFONO) VALUES 
+('Ana Martínez', 'Calle 123, Ciudad', '555-1234'),
+('Luis García', 'Av. Principal, Pueblo', '555-5678'),
+('Marta Fernández', 'Calle 456, Villa', '555-9876');
+
+/*DIM_GENERO_LITERARIO*/
+INSERT INTO DIM_GENERO_LITERARIO (NOMBRE_GENERO) VALUES 
+('Ficción'),
+('Misterio'),
+('Aventura');
+
+/*DIM_LIBRO*/
+INSERT INTO DIM_LIBRO (TITULO_LIBRO, FECHA_PUBLICACION, NUMERO_COPIAS_DISPONIBLES) VALUES 
+('Cien Años de Soledad', '1967-05-30', 5),
+('Harry Potter y la Piedra Filosofal', '1997-06-26', 8),
+('La Casa de los Espíritus', '1982-01-01', 3);
+
+/*HECHO_PRESTAMO*/
+INSERT INTO HECHO_PRESTAMO (ID_PRESTAMO, ID_AUTOR, ID_GENERO, ID_LIBRO, ID_CLIENTE, FECHA_PRESTAMO, FECHA_DEVOLUCION, ESTADO) VALUES 
+(1, 1, 1, 1, '2023-01-15', '2023-02-01', 'Devuelto'),
+(2, 2, 1, 2, '2023-02-01', NULL, 'Pendiente'),
+(3, 3, 2, 3, '2023-03-10', NULL, 'Pendiente');
+
+
+
+
+
+
+
